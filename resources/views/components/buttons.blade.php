@@ -6,10 +6,10 @@
         </p>
     </div>
 
-    <div class="grid @if(count($providers) > 1) grid-cols-2 @endif gap-4">
+    <div class="flex items-center justify-center text-center">
         @foreach($providers as $key => $provider)
             <x-filament::button
-                color="secondary"
+                color="gray"
                 :icon="$provider['icon'] ?? null"
                 tag="a"
                 :href="route('socialite.oauth.redirect', $key)"

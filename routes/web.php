@@ -1,7 +1,8 @@
 <?php
 
-Route::domain(config('filament.domain'))
-    ->middleware(config('filament.middleware.base'))
+$panel = filament()->getCurrentPanel();
+
+Route::middleware($panel->getMiddleware())
     ->name('socialite.')
     ->group(function () {
         Route::get('/oauth/{provider}', [
